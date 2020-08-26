@@ -7,8 +7,8 @@ class Create_table_items
 	public function up()
 	{
 		\DBUtil::create_table('items', array(
-			'id' => array('type' => 'int', 'unsigned' => true, 'null' => false, 'auto_increment' => true, 'constraint' => '11'),
-			'itemId' => array('type' => 'int', 'unsigned' => true, 'null' => false, 'constraint' => '11'),
+			'id' => array('type' => 'bigint', 'unsigned' => true, 'null' => false, 'auto_increment' => true, 'constraint' => '11'),
+			'itemId' => array('type' => 'bigint', 'unsigned' => true, 'null' => false, 'constraint' => '11'),
 			'title' => array('constraint' => 255, 'type' => 'varchar', 'null' => true,),
 			'globalId' => array('constraint' => 255, 'type' => 'varchar', 'null' => true,),
 			'primaryCategory' => array('constraint' => 255, 'type' => 'varchar', 'null' => true,),
@@ -25,8 +25,8 @@ class Create_table_items
 			'condition' => array('constraint' => 255, 'type' => 'varchar', 'null' => true,),
 			'isMultiVariationListing' => array('constraint' => 255, 'type' => 'varchar', 'null' => true,),
 			'topRatedListing' => array('constraint' => 255, 'type' => 'varchar', 'null' => true,),
-			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
-			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
+			'created_at' => array('constraint' => 11, 'type' => 'bigint', 'null' => true),
+			'updated_at' => array('constraint' => 11, 'type' => 'bigint', 'null' => true),
 		), array('id', 'itemId'));
 	}
 
