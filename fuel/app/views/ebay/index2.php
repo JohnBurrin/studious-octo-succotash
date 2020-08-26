@@ -1,5 +1,5 @@
 <?php echo Pagination::instance('mypagination')->render(); ?>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+ <div class="row justify-content-center">
   <?php foreach ($this->data['item_data'] as $row_data) {
       $listingInfo = json_decode($row_data['listingInfo']);
       $paymentMethod = json_decode($row_data['paymentMethod']);
@@ -11,12 +11,12 @@
       $now = new DateTime();
       $interval = $now->diff($endDateTime);
      ?>
-      <div class="col mb-4">
-        <div class="card" style="width: 20rem;">
+     <div class="col-auto mb-3">
+        <div class="card" style="width: 18rem;">
+            <a href="<?php echo $row_data['viewItemURL'];?>">
+                <img class="card-img-top" src="<?php echo $row_data['galleryURL'];?>" alt="...">
+            </a>
           <div class="card-body">
-               <a href="<?php echo $row_data['viewItemURL'];?>">
-                   <img src="<?php echo $row_data['galleryURL'];?>" alt="Card image cap">
-              </a>
             <h5 class="card-title"></h5>
             <p class="card-text"><?php echo $row_data['title']; ?></p>
             <ul class="list-group list-group-flush">
@@ -26,8 +26,8 @@
                  (isset($listingInfo->watchCount) && $listingInfo->watchCount[0] > 1) ? $plural ="s" : $plural = "";
                   ?>
               <li class="list-group-item"><?= (isset($listingInfo->watchCount)) ? $listingInfo->watchCount[0] . " watcher".$plural : "0 watchers" ?></li>
-              <li class="list-group-item">Best Offer is<?= ($listingInfo->bestOfferEnabled[0] === "true" ? "" : "n't" )?> available</li>
-              <li class="list-group-item">Buy it now is<?= ($listingInfo->buyItNowAvailable[0] === "true" ? "" : "n't" )?> available</li>
+              <!--li class="list-group-item">Best Offer is<?= ($listingInfo->bestOfferEnabled[0] === "true" ? "" : "n't" )?> available</li>
+              <li class="list-group-item">Buy it now is<?= ($listingInfo->buyItNowAvailable[0] === "true" ? "" : "n't" )?> available</li-->
               <li class="list-group-item">Condition:<?= $condition->conditionDisplayName[0] ?></li>
               <li class="list-group-item">Time left <?= $interval->format('%a days %Hh %Im %Ss')?></li>
             </ul>

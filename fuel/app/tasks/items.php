@@ -58,7 +58,8 @@ class Items
                 'paginationInput.entriesPerPage' => $entriesPerPage ,
                 'paginationInput.pageNumber' => $pageNumber,
                 'GLOBAL-ID' => 'EBAY-GB',
-                'siteid' => '3'
+                'siteid' => '3',
+                'sortOrder' => 'EndTimeSoonest'
                 ));
                 $curl->execute();
                 // fetch the resulting Response object

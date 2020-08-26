@@ -11,15 +11,15 @@
 <script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="col">
+	<div class="container-fluid mt-4">
+
 			<h1><?php echo $title; ?></h1>
 			<hr>
 
-		</div>
-		<div class="col">
+
+
 			<?php echo $content; ?>
-		</div>
+
 
 		<footer>
 			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
