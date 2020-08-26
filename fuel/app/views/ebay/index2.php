@@ -1,5 +1,5 @@
 <?php echo Pagination::instance('mypagination')->render(); ?>
- <div class="row justify-content-center">
+ <div class="card-deck justify-content-center">
   <?php foreach ($this->data['item_data'] as $row_data) {
       $listingInfo = json_decode($row_data['listingInfo']);
       $paymentMethod = json_decode($row_data['paymentMethod']);
@@ -12,7 +12,7 @@
       $interval = $now->diff($endDateTime);
      ?>
      <div class="col-auto mb-3">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 20rem;">
             <a href="<?php echo $row_data['viewItemURL'];?>">
                 <img class="card-img-top" src="<?php echo $row_data['galleryURL'];?>" alt="...">
             </a>
