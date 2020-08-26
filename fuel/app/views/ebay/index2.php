@@ -12,7 +12,7 @@
       $interval = $now->diff($endDateTime);
      ?>
      <div class="col-auto mb-3">
-        <div class="card" style="width: 20rem;">
+        <div class="card" style="width: 50rem;">
             <a href="<?php echo $row_data['viewItemURL'];?>">
                 <img class="card-img-top" src="<?php echo $row_data['galleryURL'];?>" alt="...">
             </a>
