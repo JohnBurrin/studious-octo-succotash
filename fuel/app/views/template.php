@@ -11,7 +11,7 @@
 <script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="col">
 			<h1><?php echo $title; ?></h1>
 			<hr>

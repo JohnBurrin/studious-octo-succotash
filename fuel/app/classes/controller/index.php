@@ -33,7 +33,7 @@ class Controller_Index extends Controller_Template
     $data['pagination'] = $pagination;
 
   $data["subnav"] = array('index'=> 'active' );
-  $this->template->title = 'Ebay &raquo; Index';
+  $this->template->title = 'Ebay &raquo; Superdream Items';
   $this->template->content = View::forge('ebay/index2', $data);
  }
 
