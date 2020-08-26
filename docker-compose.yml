@@ -1,0 +1,42 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: .docker/app/Dockerfile
+      args:
+        debug: "true"
+        XDEBUG_HOST: "host.docker.internal"
+    ports:
+      - "80:80"
+    networks:
+      - "backend"
+    volumes:
+      - ./fuel/app:/var/www/fuel/app
+      - ./composer.json:/var/www/composer.json
+      - ./composer.lock:/var/www/composer.lock
+      - ./themes:/var/www/themes
+    environment:
+      - FUEL_ENV=development
+      - EMAIL=jonnyb3010@gmail.com
+
+  mysql:
+    image: mysql:5.7.25
+    command: --sql_mode="NO_ENGINE_SUBSTITUTION"
+    networks:
+      - "backend"
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      - MYSQL_USER=batchscan
+      - MYSQL_PASSWORD=batchscan
+      - MYSQL_DATABASE=batchscan
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+
+networks:
+  backend:
+
+volumes:
+  dbdata:
