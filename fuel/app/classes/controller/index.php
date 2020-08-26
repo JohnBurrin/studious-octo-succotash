@@ -13,7 +13,7 @@ class Controller_Index extends Controller_Template
    'per_page' => 20,
    'show_first' => true,
    'show_last' => true,
-   'num_links' => 10,
+   'num_links' => 5,
    // 'uri_segment' => 3,
    // or if you prefer pagination by query string
    'uri_segment'    => 'page',
