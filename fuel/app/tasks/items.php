@@ -34,12 +34,22 @@ class Items
                     $item->condition = (isset($thisItem->condition)) ? json_encode($thisItem->condition[0]) : null;
                     $item->isMultiVariationListing = $thisItem->isMultiVariationListing[0] ?? null;
                     $item->topRatedListing = $thisItem->topRatedListing[0] ?? null;
+                    $item->sellerUserName = (isset($thisItem->sellerInfo)) ? $thisItem->sellerInfo[0]->sellerUserName[0] : null;
+                    $item->feedbackScore = (isset($thisItem->sellerInfo)) ? $thisItem->sellerInfo[0]->feedbackScore[0] : null;
+                    $item->storeName = (isset($thisItem->storeInfo)) ? $thisItem->storeInfo[0]->storeName[0] : null;
+                    $item->storeURL = (isset($thisItem->storeInfo)) ? $thisItem->storeInfo[0]->storeURL[0]  : null;
                     $item->save();
                 }
             }
             $result = self::call_ebay(100, $p++);
         }
         // Now for the remaining pages
+    }
+
+    public static function fetchTest()
+    {
+        $result = self::call_ebay(1, 1);
+        var_dump($result->findItemsByKeywordsResponse[0]->searchResult[0]->item[0]);
     }
 
     private static function call_ebay($entriesPerPage = 1, $pageNumber = 1) {
@@ -59,7 +69,9 @@ class Items
                 'paginationInput.pageNumber' => $pageNumber,
                 'GLOBAL-ID' => 'EBAY-GB',
                 'siteid' => '3',
-                'sortOrder' => 'EndTimeSoonest'
+                'sortOrder' => 'EndTimeSoonest',
+                'outputSelector(0)' => 'SellerInfo',
+                'outputSelector(1)' => 'StoreInfo'
                 ));
                 $curl->execute();
                 // fetch the resulting Response object

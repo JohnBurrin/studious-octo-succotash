@@ -32,6 +32,14 @@
               <!--li class="list-group-item">Best Offer is<?= ($listingInfo->bestOfferEnabled[0] === "true" ? "" : "n't" )?> available</li>
               <li class="list-group-item">Buy it now is<?= ($listingInfo->buyItNowAvailable[0] === "true" ? "" : "n't" )?> available</li-->
               <li class="list-group-item">Condition:<?= $condition->conditionDisplayName[0] ?></li>
+              <li class="list-group-item">
+              <?php if (isset($row_data['storeName'])) {
+                  echo "<a href=\"" .  $row_data['storeURL']. "\">" . $row_data['storeName'] ."</a>";
+              } else {
+                  echo "Seller: " .$row_data['sellerUserName'];
+              }?>
+              (<?=$row_data['feedbackScore']?>)
+              </li>
               <li class="list-group-item">Time left <?= $interval->format('%a days %Hh %Im %Ss')?></li>
             </ul>
             <div class="col text-center mt-2">

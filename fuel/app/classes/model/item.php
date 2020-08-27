@@ -21,6 +21,10 @@ class Model_Item extends \Orm\Model
         'condition',
         'isMultiVariationListing',
         'topRatedListing',
+        'sellerUserName',
+        'feedbackScore',
+        'storeName',
+        'storeURL',
         'created_at',
         'updated_at',
     );
