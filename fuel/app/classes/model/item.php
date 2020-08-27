@@ -25,6 +25,7 @@ class Model_Item extends \Orm\Model
         'feedbackScore',
         'storeName',
         'storeURL',
+        'categoryID',
         'created_at',
         'updated_at',
     );
@@ -68,9 +69,14 @@ class Model_Item extends \Orm\Model
 
     }
 
-    public static function get_count()
+    public static function get_count($categoryId = null)
     {
-    $result = \DB::query('SELECT count(*)as count FROM `items`')->execute();
+        if (is_null($categoryId)){
+            $result = \DB::query('SELECT count(*) as count FROM `items` where isnull(`categoryId`)')->execute();
+        } else {
+            $result = \DB::query('SELECT count(*) as count FROM `items` where `categoryId` =' . $categoryId)->execute();
+        }
+
     // Fragile
     return (int)$result[0]['count'];
     }

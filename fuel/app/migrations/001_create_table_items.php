@@ -29,6 +29,7 @@ class Create_table_items
 			'feedbackScore' => array('type' => 'bigint', 'unsigned' => true, 'null' => true, 'constraint' => '11'),
 			'storeName' => array('constraint' => 255, 'type' => 'varchar', 'null' => true),
 			'storeURL' => array('constraint' => 255, 'type' => 'varchar', 'null' => true),
+			'categoryId' => array('type' => 'bigint', 'unsigned' => true, 'null' => true, 'constraint' => '11'),
 			'created_at' => array('constraint' => 11, 'type' => 'bigint', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'bigint', 'null' => true),
 		), array('id', 'itemId'));

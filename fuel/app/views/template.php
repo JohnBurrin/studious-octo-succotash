@@ -14,19 +14,11 @@
 	<div class="container-fluid mt-4">
 
 			<h1><?php echo $title; ?></h1>
+			<p class="text-right"><a href="<?=$link['url']?>"><?=$link['title']?></a></p>
 			<hr>
-
-
-
 			<?php echo $content; ?>
-
-
 		<footer>
 			<p class="pull-right">Page rendered in {exec_time}s using {mem_usage}mb of memory.</p>
-			<p>
-				<a href="https://fuelphp.com">FuelPHP</a> is released under the MIT license.<br>
-				<small>Version: <?php echo e(Fuel::VERSION); ?></small>
-			</p>
 		</footer>
 	</div>
 </body>

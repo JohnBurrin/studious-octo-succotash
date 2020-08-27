@@ -1,11 +1,11 @@
 <?php
 use \Model\Item;
-class Controller_Index extends Controller_Template
+class Controller_Superdreams extends Controller_Template
 {
 
     public function action_index()
     {
-        $count = Model_Item::get_count();
+        $count = Model_Item::get_count(422);
 
         $config = array(
             'pagination_url' => '/',
@@ -25,7 +25,7 @@ class Controller_Index extends Controller_Template
 
         $data['item_data'] = DB::select()
             ->from('items')
-            ->where('categoryId', null)
+            ->where('categoryId', 422)
             ->limit($pagination->per_page)
             ->offset($pagination->offset)
             ->execute()
@@ -34,8 +34,8 @@ class Controller_Index extends Controller_Template
         $data['pagination'] = $pagination;
 
         $data["subnav"] = array('index'=> 'active' );
-        $this->template->link = ['title' => "Bikes", 'url' => "superdreams"];
-        $this->template->title = 'Ebay &raquo; Superdream Items';
+        $this->template->link = ['title' => "Parts", 'url' => "/"];
+        $this->template->title = 'Ebay &raquo; Superdreams';
         $this->template->content = View::forge('ebay/index2', $data);
     }
 }
