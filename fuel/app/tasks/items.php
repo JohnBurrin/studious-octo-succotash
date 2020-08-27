@@ -5,7 +5,8 @@ class Items
 {
     public static function fetch()
     {
-        $result = self::call_ebay(100, 1);
+        $keywords = 'Honda Superdream CB250N CB400N';
+        $result = self::call_ebay(100, 1, $keywords);
         $numPages = $result->findItemsByKeywordsResponse[0]->paginationOutput[0]->totalPages[0];
 
         \DBUtil::truncate_table('items');
@@ -41,30 +42,32 @@ class Items
                     $item->save();
                 }
             }
-            $result = self::call_ebay(100, $p++);
+            $result = self::call_ebay(100, $p++, $keywords);
         }
         // Now for the remaining pages
     }
 
     public static function fetchTest()
     {
-        $result = self::call_ebay(1, 1);
+        $result = self::call_ebay(1, 1, 'Honda Superdream CB250N CB400N');
         var_dump($result->findItemsByKeywordsResponse[0]->searchResult[0]->item[0]);
     }
 
-    private static function call_ebay($entriesPerPage = 1, $pageNumber = 1) {
+    private static function call_ebay($entriesPerPage = 1, $pageNumber = 1, $keywords) {
+        $config = (\Config::get('ebay'));
+    //    var_dump($config['production']['credentials']['appId']);die();
         // create a Request_Curl object
         $curl = \Request::forge('https://svcs.ebay.com/services/search/FindingService/v1', 'curl');
         $curl->set_method('get');
         // set some parameters
         $curl->set_params(
             array(
-                'SECURITY-APPNAME' => 'JohnBurr-FirstGo-PRD-9b7edec1b-e5b4f399',
+                'SECURITY-APPNAME' => $config['production']['credentials']['appId'],
                 'OPERATION-NAME' => 'findItemsByKeywords',
                 'SERVICE-VERSION' => '1.0.0',
                 'RESPONSE-DATA-FORMAT' => 'JSON',
                 'REST-PAYLOAD' => "true",
-                'keywords' => 'Honda Superdream CB250N CB400N',
+                'keywords' => $keywords,
                 'paginationInput.entriesPerPage' => $entriesPerPage ,
                 'paginationInput.pageNumber' => $pageNumber,
                 'GLOBAL-ID' => 'EBAY-GB',
