@@ -24,7 +24,10 @@
                      Shipping: <?= $shippingInfo['shippingServiceCost'][0]['__value__'] ?> <?= $shippingInfo['shippingServiceCost'][0]['@currencyId']?></li>
                  <?php
                  (isset($listingInfo->watchCount) && $listingInfo->watchCount[0] > 1) ? $plural ="s" : $plural = "";
+                 (isset($row_data['postalCode'])) ? $postalCode = ", " . $row_data['postalCode'] : $postalCode = "";
+                 $postalCode = substr_replace($postalCode, " ", -3, 0);
                   ?>
+            <li class="list-group-item"><p class="card-text"><?php echo $row_data['location']; ?> <?= $postalCode ?></p></li>
               <li class="list-group-item"><?= (isset($listingInfo->watchCount)) ? $listingInfo->watchCount[0] . " watcher".$plural : "0 watchers" ?></li>
               <!--li class="list-group-item">Best Offer is<?= ($listingInfo->bestOfferEnabled[0] === "true" ? "" : "n't" )?> available</li>
               <li class="list-group-item">Buy it now is<?= ($listingInfo->buyItNowAvailable[0] === "true" ? "" : "n't" )?> available</li-->
