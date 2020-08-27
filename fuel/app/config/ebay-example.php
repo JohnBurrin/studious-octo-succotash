@@ -20,9 +20,9 @@ return array(
     ],
     'production' => [
         'credentials' => [
-            'devId' => '1ed517d1-9d07-4026-894e-bfe07c15c855',
-            'appId' => 'JohnBurr-FirstGo-PRD-9b7edec1b-e5b4f399',
-            'certId' => 'PRD-b7edec1b10e5-7938-4a8a-a653-3874',
+            'devId' => 'YOUR_SANDBOX_OAUTH_USER_TOKEN',
+            'appId' => 'YOUR_SANDBOX_OAUTH_USER_TOKEN',
+            'certId' => 'YOUR_SANDBOX_OAUTH_USER_TOKEN',
         ],
         'authToken' => 'YOUR_PRODUCTION_USER_TOKEN_APPLICATION_KEY',
         'oauthUserToken' => 'YOUR_PRODUCTION_OAUTH_USER_TOKEN',
