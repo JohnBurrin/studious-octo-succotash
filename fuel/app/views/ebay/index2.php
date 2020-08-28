@@ -40,7 +40,7 @@
               }?>
               (<?=$row_data['feedbackScore']?>)
               </li>
-              <li class="list-group-item">Time left <?= $interval->format('%a days %Hh %Im %Ss')?></li>
+              <li class="list-group-item"><?= ($interval->format("%R") =="-") ? "<b class=\"text-danger\">Ended</b>" : "Time left " . $interval->format('%a days %Hh %Im %Ss')?></li>
             </ul>
             <div class="col text-center mt-2">
               <a href="<?php echo $row_data['viewItemURL'];?>" class="btn btn-primary">View On eBay</a>
