@@ -57,7 +57,7 @@ class Items
 
     public static function fetchTest()
     {
-        $result = self::call_ebay(1, 1, 'Honda Superdream CB250N CB400N');
+        $result = self::call_ebay(1, 1, array('keywords' => 'Honda Superdream CB250N CB400N', "categoryId" => null));
         var_dump($result->findItemsAdvancedResponse[0]->paginationOutput);
     }
 
