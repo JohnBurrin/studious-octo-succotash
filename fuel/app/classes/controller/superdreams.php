@@ -8,7 +8,7 @@ class Controller_Superdreams extends Controller_Template
         $count = Model_Item::get_count(422);
 
         $config = array(
-            'pagination_url' => '/',
+            'pagination_url' => '/superdreams',
             'total_items' => $count,
             'per_page' => 20,
             'show_first' => true,
