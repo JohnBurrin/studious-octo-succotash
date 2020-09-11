@@ -23,12 +23,14 @@
                  <li class="list-group-item">Price: <?= $sellingStatus['currentPrice'][0]['__value__'] ?> <?= $sellingStatus['currentPrice'][0]['@currencyId']?> <br />
                     Shipping: <?= $shippingInfo['shippingServiceCost'][0]['__value__'] ?> <?= $shippingInfo['shippingServiceCost'][0]['@currencyId']?></li>
                 <?php
-                    (isset($listingInfo->watchCount) && $listingInfo->watchCount[0] > 1) ? $plural ="s" : $plural = "";
+                    (isset($listingInfo->watchCount) && $listingInfo->watchCount[0] > 1) ? $watcherplural ="s" : $watcherplural = "";
+                    (isset($sellingStatus['bidCount']) && $sellingStatus['bidCount'][0] > 1) ? $bidderplural ="s" : $bidderplural = "";
                     (isset($row_data['postalCode'])) ? $postalCode = ", " . $row_data['postalCode'] : $postalCode = "";
                     $postalCode = substr_replace($postalCode, " ", -3, 0);
                 ?>
             <li class="list-group-item"><p class="card-text"><?php echo $row_data['location']; ?> <?= $postalCode ?></p></li>
-              <li class="list-group-item"><?= (isset($listingInfo->watchCount)) ? $listingInfo->watchCount[0] . " watcher".$plural : "0 watchers" ?></li>
+              <li class="list-group-item"><?= (isset($listingInfo->watchCount)) ? $listingInfo->watchCount[0] . " watcher".$watcherplural : "0 watchers" ?></li>
+              <li class="list-group-item"><?= (isset($sellingStatus['bidCount'])) ? $sellingStatus['bidCount'][0] . " bid".$bidderplural : "0 bids" ?></li>
               <!--li class="list-group-item">Best Offer is<?= ($listingInfo->bestOfferEnabled[0] === "true" ? "" : "n't" )?> available</li>
               <li class="list-group-item">Buy it now is<?= ($listingInfo->buyItNowAvailable[0] === "true" ? "" : "n't" )?> available</li-->
               <li class="list-group-item">Condition:<?= (isset($condition->conditionDisplayName[0]) ? $condition->conditionDisplayName[0] : "") ?></li>
