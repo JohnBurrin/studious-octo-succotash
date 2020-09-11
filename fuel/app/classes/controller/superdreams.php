@@ -21,7 +21,7 @@ class Controller_Superdreams extends Controller_Template
 
 
           // Create a pagination instance named 'mypagination'
-        $pagination = Pagination::forge('mypagination',  $config);
+        $pagination = Pagination::forge('mypagination', $config);
 
         $data['item_data'] = DB::select()
             ->from('items')
@@ -35,7 +35,9 @@ class Controller_Superdreams extends Controller_Template
 
         $data["subnav"] = array('index'=> 'active' );
         $this->template->link = ['title' => "Parts", 'url' => "/"];
-        $this->template->title = 'Ebay &raquo; Superdreams';
+        $this->template->title = 'Honda CB250N / CB400N Superdream motorcyles for sale on eBay';
+        $this->template->description = 'This page contains a list of Honda CB250n and CB400n motorcycles availble for sale on eBay';
+        $this->template->keywords = 'Honda, CB250N, CB400N, Superdream, motorcycles, bikes, eBay';
         $this->template->content = View::forge('ebay/index2', $data);
     }
 }

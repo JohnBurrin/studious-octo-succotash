@@ -21,7 +21,7 @@ class Controller_Index extends Controller_Template
 
 
           // Create a pagination instance named 'mypagination'
-        $pagination = Pagination::forge('mypagination',  $config);
+        $pagination = Pagination::forge('mypagination', $config);
 
         $data['item_data'] = DB::select()
             ->from('items')
@@ -35,7 +35,9 @@ class Controller_Index extends Controller_Template
 
         $data["subnav"] = array('index'=> 'active' );
         $this->template->link = ['title' => "Bikes", 'url' => "superdreams"];
-        $this->template->title = 'Ebay &raquo; Superdream Items';
+        $this->template->title = 'Honda CB250N / CB400N Superdream spare parts for sale on eBay';
+        $this->template->description = 'This page contains a list of Honda CB250n and CB400n spare parts availble for sale on eBay';
+        $this->template->keywords = 'Honda, CB250N, CB400N, Superdream, spare parts, eBay';
         $this->template->content = View::forge('ebay/index2', $data);
     }
 }
