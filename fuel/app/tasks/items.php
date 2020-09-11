@@ -20,7 +20,7 @@ class Items
             $p = 1;
             while ($p <= $numPages) {
                 $result = array_pop($result->findItemsAdvancedResponse);
-                if($result->ack[0] === "Success") {
+                if ($result->ack[0] === "Success") {
                     $numItems = count($result->searchResult[0]->item);
                     for ($l = 0; $l < $numItems; $l++) {
                         $thisItem = $result->searchResult[0]->item[$l];
@@ -29,7 +29,11 @@ class Items
                         $item->title = $thisItem->title[0] ?? null;
                         $item->globalId = $thisItem->globalId[0] ?? null;
                         $item->primaryCategory = (isset($thisItem->primaryCategory)) ? json_encode($thisItem->primaryCategory[0]) : null;
-                        $item->galleryURL = $thisItem->galleryURL[0] ?? null;
+                        if (isset($thisItem->pictureURLSuperSize[0])) {
+                            $item->galleryURL = $thisItem->pictureURLSuperSize[0];
+                        } else {
+                            $item->galleryURL = $thisItem->galleryURL[0] ?? null;
+                        }
                         $item->viewItemURL = $thisItem->viewItemURL[0] ?? null;
                         $item->paymentMethod = (isset($thisItem->paymentMethod)) ? json_encode($thisItem->paymentMethod[0]) : null;
                         $item->autoPay = $thisItem->autoPay[0] ?? null;
@@ -61,7 +65,8 @@ class Items
         var_dump($result->findItemsAdvancedResponse[0]->paginationOutput);
     }
 
-    private static function call_ebay($entriesPerPage = 1, $pageNumber = 1, $searchTerm) {
+    private static function call_ebay($entriesPerPage = 1, $pageNumber = 1, $searchTerm = "")
+    {
         $config = (\Config::get('ebay'));
 
         // create a Request_Curl object
@@ -83,8 +88,10 @@ class Items
                 'sortOrder' => 'EndTimeSoonest',
                 'outputSelector(0)' => 'SellerInfo',
                 'outputSelector(1)' => 'StoreInfo',
-                'categoryId' => $searchTerm['categoryId']
-                ));
+                'outputSelector(2)' => 'PictureURLSuperSize',
+                'categoryId' => $searchTerm['categoryId'])
+        );
+
                 $curl->execute();
                 // fetch the resulting Response object
                 $result = json_decode($curl->response());
