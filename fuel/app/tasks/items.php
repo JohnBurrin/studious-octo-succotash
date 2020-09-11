@@ -34,6 +34,8 @@ class Items
                         } else {
                             $item->galleryURL = $thisItem->galleryURL[0] ?? null;
                         }
+
+                        $item->galleryURL = preg_replace("/^http:/i", "https:", $item->galleryURL);
                         $item->viewItemURL = $thisItem->viewItemURL[0] ?? null;
                         $item->paymentMethod = (isset($thisItem->paymentMethod)) ? json_encode($thisItem->paymentMethod[0]) : null;
                         $item->autoPay = $thisItem->autoPay[0] ?? null;
