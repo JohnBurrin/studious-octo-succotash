@@ -9,6 +9,16 @@
     </style>
     <script>window._epn = {campaign: 5338733485};</script>
 <script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177804611-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-177804611-1');
+</script>
+
 </head>
 <body>
     <div class="container-fluid mt-4">
