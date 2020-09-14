@@ -10,7 +10,7 @@ class Controller_Superdreams extends Controller_Template
         $config = array(
             'pagination_url' => '/superdreams',
             'total_items' => $count,
-            'per_page' => 10,
+            'per_page' => 14,
             'show_first' => true,
             'show_last' => true,
             'num_links' => 5,

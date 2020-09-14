@@ -10,7 +10,7 @@ class Controller_Index extends Controller_Template
         $config = array(
             'pagination_url' => '/',
             'total_items' => $count,
-            'per_page' => 20,
+            'per_page' => 21,
             'show_first' => true,
             'show_last' => true,
             'num_links' => 5,
