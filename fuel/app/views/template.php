@@ -1,11 +1,4 @@
-
-        </div>
-    </div>
-</section>
-<!-- Team -->	<script type="text/javascript">
-	//No Js required	</script>
-</body>
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -110,10 +103,24 @@ section .section-title {
 
 .frontside .card .card-body img {
 
-}    </style>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+}
+</style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+<script>window._epn = {campaign: 5338733485};</script>
+
+<script src="https://epnt.ebay.com/static/epn-smart-tools.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177804611-1"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-177804611-1');
+</script>
 </head>
 <body>
     <!-- Team -->
@@ -122,14 +129,12 @@ section .section-title {
         <h5 class="section-title h1"><?php echo $title; ?></h5>
         <p class="text-right"><a href="<?=$link['url']?>"><?=$link['title']?></a></p>
         <?php echo Pagination::instance('mypagination')->render(); ?>
-        <div class="row">
-  <?php echo $content; ?>
+            <div class="row">
+                <?php echo $content; ?>
 
+              </div>
+            <?php echo Pagination::instance('mypagination')->render(); ?>
           </div>
-          <?php echo Pagination::instance('mypagination')->render(); ?>
-      </div>
-  </section>
-  <!-- Team -->	<script type="text/javascript">
-  	//No Js required	</script>
-  </body>
-  </html>
+        </section>
+    </body>
+</html>
