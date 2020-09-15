@@ -23,7 +23,7 @@
                         <div class="card-body text-center">
                             <p>
                                 <a href="<?php echo $row_data['viewItemURL'];?>">
-                                    <img class=" img-fluid" src="<?php echo $row_data['galleryURL'];?>" alt="...">
+                                    <img class=" img-fluid" src="<?php echo $row_data['galleryURL'];?>" aria-label="Image of <?php echo $row_data['title']; ?>" alt="Image of <?php echo $row_data['title']; ?>" >
                                 </a>
                             </p>
                             <h4 class="card-title"><?php echo $row_data['title']; ?></h4>
