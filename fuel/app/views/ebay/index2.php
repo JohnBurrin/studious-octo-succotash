@@ -42,13 +42,16 @@
                                     <?= (isset($listingInfo->watchCount)) ? $listingInfo->watchCount[0] . " watcher".$watcherplural : "0 watchers" ?>
                                 </li>
                                 <li class="list-group-item"><?= (isset($sellingStatus['bidCount'])) ? $sellingStatus['bidCount'][0] . " bid".$bidderplural : "0 bids" ?></li>
+                                <?php if (isset($listingInfo->listingType)) { ?>
+                                    <li class="list-group-item">Listing Type: <?=$listingInfo->listingType[0] ?></li>
+                                <?php }?>
                                 <li class="list-group-item">Condition:<?= (isset($condition->conditionDisplayName[0]) ? $condition->conditionDisplayName[0] : "") ?></li>
                                 <li class="list-group-item">
-                                <?php if (isset($row_data['storeName'])) {
-                                      echo "<a href=\"" .  $row_data['storeURL']. "\">" . $row_data['storeName'] ."</a>";
-                                } else {
-                                    echo "Seller: " .$row_data['sellerUserName'];
-                                }?>
+                                    <?php if (isset($row_data['storeName'])) {
+                                          echo "<a href=\"" .  $row_data['storeURL']. "\">" . $row_data['storeName'] ."</a>";
+                                    } else {
+                                        echo "Seller: " .$row_data['sellerUserName'];
+                                    }?>
                                 (<?=$row_data['feedbackScore']?>)
                                 </li>
                                 <li class="list-group-item"><?= ($interval->format("%R") =="-") ? "<b class=\"text-danger\">Ended</b>" : "Time left " . $interval->format('%a days %Hh %Im %Ss')?></li>
