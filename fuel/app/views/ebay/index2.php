@@ -27,9 +27,9 @@
                                 </a>
                             </p>
                             <h4 class="card-title"><?php echo $row_data['title']; ?></h4>
-                            <p class="card-text"></p>
-
-                            <a href="<?php echo $row_data['viewItemURL'];?>" class="btn btn-primary btn-sm">View On eBay</a>
+                            <p class="card-text">
+                                <a href="<?php echo $row_data['viewItemURL'];?>" class="btn btn-primary btn-sm">View On eBay</a>
+                            </p>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     Price: <?= $sellingStatus['currentPrice'][0]['__value__'] ?> <?= $sellingStatus['currentPrice'][0]['@currencyId'] ?> /
