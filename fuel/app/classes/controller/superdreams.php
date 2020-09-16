@@ -13,7 +13,7 @@ class Controller_Superdreams extends Controller_Template
             'per_page' => 14,
             'show_first' => true,
             'show_last' => true,
-            'num_links' => 5,
+            'num_links' => 24,
             // 'uri_segment' => 3,
             // or if you prefer pagination by query string
             'uri_segment'    => 'page',

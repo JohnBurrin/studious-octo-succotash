@@ -175,7 +175,7 @@ return array(
          * ---------------------------------------------------------------------
          */
 
-        'wrapper' => "<nav aria-label=\"Page navigation\">\n\t<ul class=\"pagination pagination-lg justify-content-center\">\n\t{pagination}\n\t</ul>\n\t</nav>\n",
+        'wrapper' => "<nav aria-label=\"Page navigation\">\n\t<ul class=\"pagination justify-content-center\">\n\t{pagination}\n\t</ul>\n\t</nav>\n",
 
         /**
          * ---------------------------------------------------------------------
