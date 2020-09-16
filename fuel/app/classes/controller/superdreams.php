@@ -19,6 +19,9 @@ class Controller_Superdreams extends Controller_Template
             'uri_segment'    => 'page',
             );
 
+        if (Agent::is_mobiledevice()) {
+             $config['num_links'] = 5;
+        }
 
           // Create a pagination instance named 'mypagination'
         $pagination = Pagination::forge('mypagination', $config);

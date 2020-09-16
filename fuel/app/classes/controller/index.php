@@ -1,5 +1,6 @@
 <?php
 use \Model\Item;
+
 class Controller_Index extends Controller_Template
 {
 
@@ -13,12 +14,15 @@ class Controller_Index extends Controller_Template
             'per_page' => 21,
             'show_first' => true,
             'show_last' => true,
-            'num_links' => 5,
+            'num_links' => 15,
             // 'uri_segment' => 3,
             // or if you prefer pagination by query string
             'uri_segment'    => 'page',
             );
 
+        if (Agent::is_mobiledevice()) {
+             $config['num_links'] = 5;
+        }
 
           // Create a pagination instance named 'mypagination'
         $pagination = Pagination::forge('mypagination', $config);
