@@ -23,10 +23,10 @@
                         <div class="card-body text-center">
                             <p>
                                 <a href="<?php echo $row_data['viewItemURL'];?>">
-                                    <img class=" img-fluid" src="<?php echo $row_data['galleryURL'];?>" aria-label="Image of <?php echo $row_data['title']; ?>" alt="Image of <?php echo $row_data['title']; ?>" >
+                                    <img class=" img-fluid" src="<?php echo $row_data['galleryURL'];?>" aria-label="<?php echo $row_data['title']; ?>" alt="<?php echo $row_data['title']; ?>" >
                                 </a>
                             </p>
-                            <h4 class="card-title"><?php echo $row_data['title']; ?></h4>
+                            <h2 class="card-title"><?php echo $row_data['title']; ?></h2>
                             <p class="card-text">
                                 <a href="<?php echo $row_data['viewItemURL'];?>" class="btn btn-primary btn-sm">View On eBay</a>
                             </p>

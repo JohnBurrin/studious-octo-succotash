@@ -103,6 +103,19 @@
     .frontside .card .card-body img {
 
     }
+    .page-link {
+        color: #0000FF !important;
+    }
+
+    .page-item.active .page-link {
+        z-index: 1;
+        color: #fff !important;
+        background-color: #007b5e;
+        border-color: #007b5e;
+    }
+    a {
+        color: #0000FF;
+    };
 </style>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -126,7 +139,7 @@
     <!-- Team -->
 <section id="team" class="pb-5">
     <div class="container">
-        <h5 class="section-title h1"><?php echo $title; ?></h5>
+        <h1 class="section-title h1"><?php echo $title; ?></h1>
         <p class="text-right"><a href="<?=$link['url']?>"><?=$link['title']?></a></p>
         <?php echo Pagination::instance('mypagination')->render(); ?>
             <div class="row">
