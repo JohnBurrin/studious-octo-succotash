@@ -85,6 +85,9 @@
                     center: result.features[0].center, // starting position [lng, lat]
                     zoom: 9 // starting zoom
                     });
+                    var marker = new mapboxgl.Marker()
+                      .setLngLat(result.features[0].center)
+                      .addTo(map);
                   });
           });
           //https://api.mapbox.com/geocoding/v5/mapbox.places/LN12UE.json?access_token=pk.eyJ1Ijoiam9ubnlob25kYSIsImEiOiJjazRqbzR2c3cwYnprM2ttbDc2bnlzZHE2In0.0jsVlBJp9kgijV8NihuJ3w
