@@ -38,6 +38,8 @@ class Controller_Index extends Controller_Template
         $data['pagination'] = $pagination;
 
         $data["subnav"] = array('index'=> 'active' );
+        $config = (\Config::get('mapbox'));
+        $this->template->mapbox_api_key = $config['api_key'];
         $this->template->link = ['title' => "Bikes", 'url' => "superdreams"];
         $this->template->title = 'Honda CB250N / CB400N Superdream spare parts for sale on eBay';
         $this->template->description = 'This page contains a list of Honda CB250n and CB400n spare parts availble for sale on eBay';

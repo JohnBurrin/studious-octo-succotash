@@ -87,7 +87,7 @@ fi
 
 # build theme
 COPY html ./html
-COPY themes ./themes
+#COPY themes ./themes
 #RUN cd themes/admin && npm install && grunt
 
 # copy rest of fileset
