@@ -27,7 +27,7 @@ class Controller_Superdreams extends Controller_Template
         $pagination = Pagination::forge('mypagination', $config);
 
         $data['item_data'] = DB::select()
-            ->from('items')
+            ->from(\Config::get('search.table'))
             ->where('categoryId', 422)
             ->limit($pagination->per_page)
             ->offset($pagination->offset)
