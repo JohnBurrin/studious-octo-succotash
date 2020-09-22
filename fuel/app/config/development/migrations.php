@@ -6,7 +6,8 @@ return array(
     array(
       'default' => 
       array(
-        0 => '001_create_table_items',
+        0 => '001_create_table_superdream',
+        1 => '002_create_table_k100',
       ),
     ),
     'module' => 

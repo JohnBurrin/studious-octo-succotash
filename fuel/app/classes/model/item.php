@@ -30,7 +30,7 @@ class Model_Item extends \Orm\Model
         'updated_at',
     );
 
-    protected static $_table_name = 'items';
+    protected static $_table_name = 'nan';
 
     protected static $_observers = array(
         'Orm\\Observer_Self' => array(
@@ -45,6 +45,11 @@ class Model_Item extends \Orm\Model
             'mysql_timestamp' => false,
         ),
     );
+
+    public static function _init()
+    {
+        static::$_table_name = \Config::get('search.table');
+    }
 
     public function _event_before_save()
     {

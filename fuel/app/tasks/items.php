@@ -8,10 +8,11 @@ class Items
 
     public static function fetch()
     {
-        $searchTerms[] = array('keywords' => 'Honda Superdream CB250N CB400N', "categoryId" => null);
-        $searchTerms[] = array('keywords' => 'superdream', "categoryId" => 422);
+        $config = (\Config::get('search'));
+        $searchTerms = $config['searchTerms'];
+        $table = $config['table'];
 
-        \DBUtil::truncate_table('items');
+        \DBUtil::truncate_table($table);
         foreach ($searchTerms as $searchTerm) {
             $keywords = $searchTerm['keywords'];
             $result = self::call_ebay(100, 1, $searchTerm);

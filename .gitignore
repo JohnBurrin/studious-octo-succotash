@@ -38,3 +38,4 @@ desktop.ini
 /fuel/app/config/crypt.php
 /fuel/app/config/ebay.php
 /fuel/app/config/mapbox.php
+/fuel/app/config/search.php

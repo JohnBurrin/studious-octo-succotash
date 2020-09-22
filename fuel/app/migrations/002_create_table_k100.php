@@ -2,11 +2,11 @@
 
 namespace Fuel\Migrations;
 
-class Create_table_items
+class Create_table_k100
 {
     public function up()
     {
-        \DBUtil::create_table('items', array(
+        \DBUtil::create_table('k100', array(
             'id' => array('type' => 'bigint', 'unsigned' => true, 'null' => false, 'auto_increment' => true, 'constraint' => '11'),
             'itemId' => array('type' => 'bigint', 'unsigned' => true, 'null' => false, 'constraint' => '11'),
             'title' => array('constraint' => 255, 'type' => 'varchar', 'null' => true),
@@ -37,6 +37,6 @@ class Create_table_items
 
     public function down()
     {
-        \DBUtil::drop_table('items');
+        \DBUtil::drop_table('k100');
     }
 }
