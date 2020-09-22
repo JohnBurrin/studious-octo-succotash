@@ -43,5 +43,6 @@
             <?php echo Pagination::instance('mypagination')->render(); ?>
           </div>
         </section>
+        Superdream
     </body>
 </html>
