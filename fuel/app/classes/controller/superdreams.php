@@ -37,6 +37,8 @@ class Controller_Superdreams extends Controller_Template
         $data['pagination'] = $pagination;
 
         $data["subnav"] = array('index'=> 'active' );
+        $config = (\Config::get('mapbox'));
+        $this->template->mapbox_api_key = $config['api_key'];
         $this->template->link = ['title' => "Parts", 'url' => "/"];
         $this->template->title = 'Honda CB250N / CB400N Superdream motorcyles for sale on eBay';
         $this->template->description = 'This page contains a list of Honda CB250n and CB400n motorcycles availble for sale on eBay';

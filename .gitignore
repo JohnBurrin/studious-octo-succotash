@@ -37,3 +37,4 @@ desktop.ini
 /fuel/app/cache/*/*
 /fuel/app/config/crypt.php
 /fuel/app/config/ebay.php
+/fuel/app/config/mapbox.php

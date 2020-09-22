@@ -23,7 +23,7 @@
                         <div class="card-body text-center">
                             <p>
                                 <a href="<?php echo $row_data['viewItemURL'];?>">
-                                    <img class=" img-fluid" src="<?php echo $row_data['galleryURL'];?>" aria-label="<?php echo $row_data['title']; ?>" alt="<?php echo $row_data['title']; ?>" >
+                                    <img class="img-fluid toggle-map" src="<?php echo $row_data['galleryURL'];?>" aria-label="<?php echo $row_data['title']; ?>" alt="<?php echo $row_data['title']; ?>" >
                                 </a>
                             </p>
                             <h2 class="card-title"><?php echo $row_data['title']; ?></h2>
@@ -36,7 +36,7 @@
                                     Shipping: <?= $shippingInfo['shippingServiceCost'][0]['__value__'] ?> <?= $shippingInfo['shippingServiceCost'][0]['@currencyId']?>
                                 </li>
                                 <li class="list-group-item">
-                                    <?php echo $row_data['location']; ?> <?= $postalCode ?>
+                                    <?php echo $row_data['location']; ?> <a href="#" data-location="<?=$postalCode?>" data-id="<?=$row_data['itemId']?>" data-toggle="modal" data-target="#locationModal"><?= $postalCode ?></a>
                                 </li>
                                 <li class="list-group-item">
                                     <?= (isset($listingInfo->watchCount)) ? $listingInfo->watchCount[0] . " watcher".$watcherplural : "0 watchers" ?>
