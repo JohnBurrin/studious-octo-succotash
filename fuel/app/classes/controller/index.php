@@ -7,6 +7,7 @@ class Controller_Index extends Controller_Template
     {
         $count = Model_Item::get_count();
 
+
         $config = array(
             'pagination_url' => '/',
             'total_items' => $count,
@@ -27,7 +28,7 @@ class Controller_Index extends Controller_Template
         $pagination = Pagination::forge('mypagination', $config);
 
         $data['item_data'] = DB::select()
-            ->from('items')
+            ->from(\Config::get('search.table'))
             ->where('categoryId', null)
             ->limit($pagination->per_page)
             ->offset($pagination->offset)

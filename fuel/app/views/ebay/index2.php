@@ -33,7 +33,9 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     Price: <?= $sellingStatus['currentPrice'][0]['__value__'] ?> <?= $sellingStatus['currentPrice'][0]['@currencyId'] ?> /
+                                    <?php if (isset($shippingInfo['shippingServiceCost'])) { ?>
                                     Shipping: <?= $shippingInfo['shippingServiceCost'][0]['__value__'] ?> <?= $shippingInfo['shippingServiceCost'][0]['@currencyId']?>
+                                <?php } ?>
                                 </li>
                                 <li class="list-group-item">
                                     <?php echo $row_data['location']; ?> <a href="#" data-location="<?=$postalCode?>" data-id="<?=$row_data['itemId']?>" data-toggle="modal" data-target="#locationModal"><?= $postalCode ?></a>
