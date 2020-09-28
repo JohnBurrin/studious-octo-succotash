@@ -3,7 +3,6 @@ use \Model\Item;
 
 class Controller_Index extends Controller_Template
 {
-
     public function action_index()
     {
         $count = Model_Item::get_count();
@@ -45,5 +44,8 @@ class Controller_Index extends Controller_Template
         $this->template->description = 'This page contains a list of Honda CB250n and CB400n spare parts availble for sale on eBay';
         $this->template->keywords = 'Honda, CB250N, CB400N, Superdream, spare parts, eBay';
         $this->template->content = View::forge('ebay/index2', $data);
+    }
+    public function action_superdreams () {
+    die("hello");
     }
 }
