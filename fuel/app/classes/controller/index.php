@@ -46,7 +46,4 @@ class Controller_Index extends Controller_Template
         $this->template->keywords = 'Honda, CB250N, CB400N, Superdream, spare parts, eBay';
         $this->template->content = View::forge('ebay/index2', $data);
     }
-    public function action_superdreams () {
-    die("hello");
-    }
 }

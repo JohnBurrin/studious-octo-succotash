@@ -1,5 +1,6 @@
 <?php
 use \Model\Item;
+
 class Controller_Superdreams extends Controller_Template
 {
 
@@ -8,7 +9,7 @@ class Controller_Superdreams extends Controller_Template
         $count = Model_Item::get_count(422);
 
         $config = array(
-            'pagination_url' => '/superdreams',
+            'pagination_url' => '/bikes',
             'total_items' => $count,
             'per_page' => 15,
             'show_first' => true,
