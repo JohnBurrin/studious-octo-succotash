@@ -5,7 +5,7 @@
 
     <title><?php echo $title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="keywords" content="<?= $keywords?>">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <?php
         echo Asset::css('app.css', array(), null, true);

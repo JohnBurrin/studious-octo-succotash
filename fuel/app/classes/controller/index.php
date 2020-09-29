@@ -6,7 +6,7 @@ class Controller_Index extends Controller_Template
     public function action_index()
     {
         $count = Model_Item::get_count();
-
+        $pageConfig = "home";
 
         $config = array(
             'pagination_url' => '/',
@@ -39,11 +39,12 @@ class Controller_Index extends Controller_Template
 
         $data["subnav"] = array('index'=> 'active' );
         $config = (\Config::get('mapbox'));
+        $template = (\Config::get('search.template'));
         $this->template->mapbox_api_key = $config['api_key'];
-        $this->template->link = ['title' => "Bikes", 'url' => "superdreams"];
-        $this->template->title = 'Honda CB250N / CB400N Superdream spare parts for sale on eBay';
-        $this->template->description = 'This page contains a list of Honda CB250n and CB400n spare parts availble for sale on eBay';
-        $this->template->keywords = 'Honda, CB250N, CB400N, Superdream, spare parts, eBay';
+        $this->template->link = ['title' => $template[$pageConfig]['link']['title'], 'url' =>  $template[$pageConfig]['link']['url']];
+        $this->template->title = $template[$pageConfig]['title'];
+        $this->template->description = $template[$pageConfig]['description'];
+        $this->template->keywords = $template[$pageConfig]['keywords'];
         $this->template->content = View::forge('ebay/index2', $data);
     }
 }
