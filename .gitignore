@@ -39,3 +39,5 @@ desktop.ini
 /fuel/app/config/ebay.php
 /fuel/app/config/mapbox.php
 /fuel/app/config/search.php
+
+/html/sitemap.txt
