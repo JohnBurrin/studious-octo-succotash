@@ -1,4 +1,6 @@
-<?php foreach ($this->data['item_data'] as $row_data) {
+<?php
+$count = 1;
+foreach ($this->data['item_data'] as $row_data) {
     $listingInfo = json_decode($row_data['listingInfo']);
     $paymentMethod = json_decode($row_data['paymentMethod']);
     $shippingInfo = json_decode($row_data['shippingInfo'], true);
@@ -13,8 +15,21 @@
     (isset($sellingStatus['bidCount']) && $sellingStatus['bidCount'][0] > 1) ? $bidderplural ="s" : $bidderplural = "";
     (isset($row_data['postalCode']) && strpos($row_data['location'], "United Kingdom")) ? $postalCode = ", " . $row_data['postalCode'] : $postalCode = "";
     $postalCode = substr_replace($postalCode, " ", -3, 0);
-
-    ?>
+    if ($count % 6 == 0) {
+        ?>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-format="fluid"
+             data-ad-layout-key="-59+cs+v-m6+z2"
+             data-ad-client="ca-pub-8371692745987188"
+             data-ad-slot="5527092065"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <?php
+    } else {
+        ?>
     <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
             <div class="mainflip">
@@ -64,4 +79,7 @@
         </div>
     </div>
     </div>
-<?php } ?>
+<?php
+    }
+}
+?>
