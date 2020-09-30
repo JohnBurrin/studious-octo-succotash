@@ -11,7 +11,7 @@
 
     (isset($listingInfo->watchCount) && $listingInfo->watchCount[0] > 1) ? $watcherplural ="s" : $watcherplural = "";
     (isset($sellingStatus['bidCount']) && $sellingStatus['bidCount'][0] > 1) ? $bidderplural ="s" : $bidderplural = "";
-    (isset($row_data['postalCode'])) ? $postalCode = ", " . $row_data['postalCode'] : $postalCode = "";
+    (isset($row_data['postalCode']) && strpos($row_data['location'], "United Kingdom")) ? $postalCode = ", " . $row_data['postalCode'] : $postalCode = "";
     $postalCode = substr_replace($postalCode, " ", -3, 0);
 
     ?>
@@ -35,7 +35,7 @@
                                     Price: <?= $sellingStatus['currentPrice'][0]['__value__'] ?> <?= $sellingStatus['currentPrice'][0]['@currencyId'] ?> /
                                     <?php if (isset($shippingInfo['shippingServiceCost'])) { ?>
                                     Shipping: <?= $shippingInfo['shippingServiceCost'][0]['__value__'] ?> <?= $shippingInfo['shippingServiceCost'][0]['@currencyId']?>
-                                <?php } ?>
+                                    <?php } ?>
                                 </li>
                                 <li class="list-group-item">
                                     <?php echo $row_data['location']; ?> <a href="#" data-location="<?=$postalCode?>" data-id="<?=$row_data['itemId']?>" data-toggle="modal" data-target="#locationModal"><?= $postalCode ?></a>
