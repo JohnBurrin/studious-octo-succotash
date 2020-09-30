@@ -37,7 +37,14 @@
 <section id="team" class="pb-5">
     <div class="container">
         <h1 class="section-title h1"><?php echo $title; ?></h1>
-        <p class="text-right"><a href="<?=$link['url']?>"><?=$link['title']?></a></p>
+        <div class="row">
+            <div class="col">
+                <p class="text-left"><a href="https://batchscan.co.uk">Home</a></p>
+            </div>
+            <div class="col">
+                <p class="text-right"><a href="<?=$link['url']?>"><?=$link['title']?></a></p>
+            </div>
+        </div>
         <?php echo Pagination::instance('mypagination')->render(); ?>
             <div class="row">
                 <?php echo $content; ?>
