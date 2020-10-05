@@ -92,6 +92,8 @@ class Items
                 'GLOBAL-ID' => 'EBAY-GB',
                 'siteid' => '3',
                 'sortOrder' => 'EndTimeSoonest',
+                'itemFilter(0).name' => 'Condition',
+                'itemFilter(0).value(0)' => 'Used',
                 'outputSelector(0)' => 'SellerInfo',
                 'outputSelector(1)' => 'StoreInfo',
                 'outputSelector(2)' => 'PictureURLSuperSize',
