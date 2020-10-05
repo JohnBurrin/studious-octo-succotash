@@ -32,7 +32,7 @@ class Create_table_superdream
             'categoryId' => array('type' => 'bigint', 'unsigned' => true, 'null' => true, 'constraint' => '11'),
             'created_at' => array('constraint' => 11, 'type' => 'bigint', 'null' => true),
             'updated_at' => array('constraint' => 11, 'type' => 'bigint', 'null' => true),
-        ), array('id', 'itemId'));
+        ), array('id', 'itemId'), false, 'InnoDB', 'utf8_unicode_ci');
     }
 
     public function down()
