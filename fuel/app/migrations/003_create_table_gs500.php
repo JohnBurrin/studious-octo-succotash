@@ -2,7 +2,7 @@
 
 namespace Fuel\Migrations;
 
-class Create_table_k100
+class Create_table_gs500
 {
     public function up()
     {
