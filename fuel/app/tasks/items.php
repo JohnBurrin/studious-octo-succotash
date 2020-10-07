@@ -94,6 +94,8 @@ class Items
                 'sortOrder' => 'EndTimeSoonest',
                 'itemFilter(0).name' => 'Condition',
                 'itemFilter(0).value(0)' => 'Used',
+                'itemFilter(1).name' => 'LocatedIn',
+                'itemFilter(1).value(0)' => 'GB',
                 'outputSelector(0)' => 'SellerInfo',
                 'outputSelector(1)' => 'StoreInfo',
                 'outputSelector(2)' => 'PictureURLSuperSize',
