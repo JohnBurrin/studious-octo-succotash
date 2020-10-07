@@ -28,6 +28,7 @@ desktop.ini
 /fuel/packages/parser/
 /fuel/app/config/development/db.php
 /fuel/app/config/staging/db.php
+/fuel/app/config/production/*/*/*
 /fuel/app/config/production/db.php
 
 /html/.htaccess
