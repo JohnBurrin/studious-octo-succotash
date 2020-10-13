@@ -17,16 +17,7 @@ foreach ($this->data['item_data'] as $row_data) {
     $postalCode = substr_replace($postalCode, " ", -3, 0);
     if (($count++ % 6) == 0) {
         ?>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-format="fluid"
-             data-ad-layout-key="-59+cs+v-m6+z2"
-             data-ad-client="ca-pub-8371692745987188"
-             data-ad-slot="5527092065"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+<SCRIPT charset="utf-8" type="text/javascript" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fhondasohc-21%2F8009%2Febb801b7-da89-46f6-9299-8f1e4c409bab&Operation=GetScriptTemplate"> </SCRIPT> <NOSCRIPT><A rel="nofollow" HREF="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fhondasohc-21%2F8009%2Febb801b7-da89-46f6-9299-8f1e4c409bab&Operation=NoScript">Amazon.co.uk Widgets</A></NOSCRIPT>
         <?php
     } else {
         ?>
@@ -79,7 +70,7 @@ foreach ($this->data['item_data'] as $row_data) {
         </div>
     </div>
     </div>
-<?php
+        <?php
     }
 }
 ?>

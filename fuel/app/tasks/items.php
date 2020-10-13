@@ -68,7 +68,7 @@ class Items
         $searchTerms = $config['searchTerms'];
     //    var_dump($searchTerms[0]['keywords']);die();
         $result = self::call_ebay(1, 1, array('keywords' => $searchTerms[0]['keywords'], "categoryId" => null));
-        var_dump($result->findItemsAdvancedResponse[0]->paginationOutput);
+        var_dump($result->findItemsAdvancedResponse[0]->verison);
     }
 
     private static function call_ebay($entriesPerPage = 1, $pageNumber = 1, $searchTerm = "")
