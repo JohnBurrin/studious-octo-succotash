@@ -17,7 +17,7 @@ foreach ($this->data['item_data'] as $row_data) {
     $postalCode = substr_replace($postalCode, " ", -3, 0);
     if (($count++ % 6) == 0) {
         ?>
-<SCRIPT charset="utf-8" type="text/javascript" src="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fhondasohc-21%2F8009%2Febb801b7-da89-46f6-9299-8f1e4c409bab&Operation=GetScriptTemplate"> </SCRIPT> <NOSCRIPT><A rel="nofollow" HREF="//ws-eu.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=GB&ID=V20070822%2FGB%2Fhondasohc-21%2F8009%2Febb801b7-da89-46f6-9299-8f1e4c409bab&Operation=NoScript">Amazon.co.uk Widgets</A></NOSCRIPT>
+
         <?php
     } else {
         ?>
